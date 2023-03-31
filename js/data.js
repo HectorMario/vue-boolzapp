@@ -184,8 +184,20 @@ const { createApp } = Vue
             this.dipende = element.imagine;
             this.element = element;
             this.subElement = element.messages;
+       },
+
+       addi(){
+            xd = this.$refs.madonna.value;
+            messag = {
+                date: '',
+                message: xd,
+                status: 'sent'
+            }
+            this.subElement.push(messag)
+
+            this.$refs.madonna.value = '';
        }
-       
+
     }
   }).mount('#app')
 

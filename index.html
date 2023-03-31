@@ -58,33 +58,42 @@
                     </div>
                 </div>
                 <div class="container-right">
-                    <div class="profilo">
-                        <div class="name">
-                            <div class="picture">
-                                <img :src="dipende" alt="">
+                    <div class="off" v-if="dipende !== ''">
+                        <div class="profilo">
+                            <div class="name">
+                                <div class="picture">
+                                    <img :src="dipende" alt="">
+                                </div>
+                                <div class="data">
+                                    <p>
+                                        <strong>{{element.name}}</strong>
+                                    </p>
+                                    <p>
+                                        Ultimo accesso oggi alle 12:00
+                                    </p>
+                                </div>
                             </div>
-                            <strong>{{element.name}}</strong>
-                        </div>
-                        <div class="options">
-    
-                        </div>
-                    </div>
-                    <div class="menssaggi">
-                        <div class="men-left">
-                            <div  class="sms white" v-for="messagge in subElement" :class="[messagge.status ? 'sent' : 'green']">
-                                <p>
-                                    {{messagge.message}}
-                                </p>
+                            <div class="options">
+        
                             </div>
                         </div>
-                    </div>
-                    <div class="lachat center">
-                        <div class="emotion">
-                            <i class="fa-regular fa-face-smile"></i>
+                        <div class="menssaggi">
+                            <div class="men-left">
+                                <div  class="sms " v-for="messagge in subElement" :class="messagge.status == 'sent' ? 'green' : 'white'">
+                                    <p>
+                                        {{messagge.message}}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <input type="text" id="chat" placeholder="Scrivi un messaggio">
-                        <div class="audio center">
-                            <i class="fa-solid fa-microphone"></i>
+                        <div class="lachat center">
+                            <div class="emotion">
+                                <i class="fa-regular fa-face-smile"></i>
+                            </div>
+                            <input type="text" id="chat" placeholder="Scrivi un messaggio" @keyup.enter="addi" ref="madonna">
+                            <div class="audio center">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
