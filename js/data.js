@@ -194,8 +194,17 @@ const { createApp } = Vue
                 status: 'sent'
             }
             this.subElement.push(messag)
-
             this.$refs.madonna.value = '';
+            this.riposta()
+       },
+
+       riposta (){
+            messag = {
+                date: '',
+                message: 'ciao',
+                status: 'received'
+            }
+            this.subElement.push(messag)
        }
 
     }
