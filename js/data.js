@@ -31,7 +31,7 @@ const { createApp } = Vue
                 name: 'Fabio',
                 avatar: '_2',
                 visible: true,
-                imagine: "../img/avatar_2.jpg",
+                imagine: "img/avatar_2.jpg",
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -54,7 +54,7 @@ const { createApp } = Vue
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
-                imagine: "../img/avatar_3.jpg",
+                imagine: "img/avatar_3.jpg",
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -77,7 +77,7 @@ const { createApp } = Vue
                 name: 'Alessandro B.',
                 avatar: '_4',
                 visible: true,
-                imagine: "../img/avatar_4.jpg",
+                imagine: "img/avatar_4.jpg",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -95,7 +95,7 @@ const { createApp } = Vue
                 name: 'Alessandro L.',
                 avatar: '_5',
                 visible: true,
-                imagine: "../img/avatar_5.jpg",
+                imagine: "img/avatar_5.jpg",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -113,7 +113,7 @@ const { createApp } = Vue
                 name: 'Claudia',
                 avatar: '_6',
                 visible: true,
-                imagine: "../img/avatar_6.jpg",
+                imagine: "img/avatar_6.jpg",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -136,7 +136,7 @@ const { createApp } = Vue
                 name: 'Federico',
                 avatar: '_7',
                 visible: true,
-                imagine: "../img/avatar_7.jpg",
+                imagine: "img/avatar_7.jpg",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -154,7 +154,7 @@ const { createApp } = Vue
                 name: 'Davide',
                 avatar: '_8',
                 visible: true,
-                imagine: "../img/avatar_8.jpg",
+                imagine: "img/avatar_8.jpg",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -173,9 +173,19 @@ const { createApp } = Vue
                     }
                 ],
             }
-        ]
-        
+        ],
+        dipende : "",
+        element : "",
+        subElement : ""
       }
+    },
+    methods: {
+       changePicture(element){
+            this.dipende = element.imagine;
+            this.element = element;
+            this.subElement = element.messages;
+       }
+       
     }
   }).mount('#app')
 

@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="chats">
-                        <div class="users" v-for=" user in contacts">
+                        <div class="users" v-for=" user in contacts" @click="changePicture(user)">
                             <div class="name" >
                                 <div class="picture">
                                     <img :src="user.imagine" alt="">
@@ -50,7 +50,7 @@
                                         </strong>
                                     </p>
                                     <p>
-                                        Ultimo messaggio invito
+                                        Ultimo messaggio inviato
                                     </p>
                                 </div>
                             </div>
@@ -61,19 +61,28 @@
                     <div class="profilo">
                         <div class="name">
                             <div class="picture">
-                                <img src="img/avatar_io.jpg" alt="">
+                                <img :src="dipende" alt="">
                             </div>
-                            <strong>sofia</strong>
+                            <strong>{{element.name}}</strong>
                         </div>
                         <div class="options">
     
+                        </div>
+                    </div>
+                    <div class="menssaggi">
+                        <div class="men-left">
+                            <div  class="sms white" v-for="messagge in subElement" :class="[messagge.status ? 'sent' : 'green']">
+                                <p>
+                                    {{messagge.message}}
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div class="lachat center">
                         <div class="emotion">
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
-                        <input type="text" id="chat" value="Scrivi un messaggio">
+                        <input type="text" id="chat" placeholder="Scrivi un messaggio">
                         <div class="audio center">
                             <i class="fa-solid fa-microphone"></i>
                         </div>
