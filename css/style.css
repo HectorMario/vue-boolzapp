@@ -111,11 +111,11 @@ i{
     width: 100%;
     height: calc(90vh - 140px);
     padding: 20px;
+    overflow-y: scroll;
 }
 
 .men-left{
     width: 100%;
-    overflow-y: scroll;
 }
 
 
@@ -124,6 +124,8 @@ i{
     min-width: 30%;
     border-radius: 5px;
     padding: 9px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .green{
@@ -135,4 +137,9 @@ i{
 .white{
     margin-top: 50px;
     background-color: #fff;
+}
+
+.dates{
+    margin-top: auto;
+    font-size: .7rem;
 }
