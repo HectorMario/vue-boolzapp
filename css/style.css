@@ -11,7 +11,13 @@ img{
 }
 
 .container-back{
-    background-color:blue;
+    background-image: linear-gradient(
+        to bottom,
+        #359204 0vh,
+        #359204 20vh,
+        #fff 20vh,
+        #fff 0vh
+    );
     height: 100vh;
     display: flex;
     justify-content: center;
