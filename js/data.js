@@ -5,6 +5,7 @@ const { createApp } = Vue
       return {
         contacts: [
             {
+                hover: false,
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
@@ -28,6 +29,7 @@ const { createApp } = Vue
                 ],
             },
             {
+                hover: false,
                 name: 'Fabio',
                 avatar: '_2',
                 visible: true,
@@ -51,6 +53,7 @@ const { createApp } = Vue
                 ],
             },
             {
+                hover: false,
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
@@ -74,6 +77,7 @@ const { createApp } = Vue
                 ],
             },
             {
+                hover: false,
                 name: 'Alessandro B.',
                 avatar: '_4',
                 visible: true,
@@ -92,6 +96,7 @@ const { createApp } = Vue
                 ],
             },
             {
+                hover: false,
                 name: 'Alessandro L.',
                 avatar: '_5',
                 visible: true,
@@ -110,6 +115,7 @@ const { createApp } = Vue
                 ],
             },
             {
+                hover: false,
                 name: 'Claudia',
                 avatar: '_6',
                 visible: true,
@@ -133,6 +139,7 @@ const { createApp } = Vue
                 ],
             },
             {
+                hover: false,
                 name: 'Federico',
                 avatar: '_7',
                 visible: true,
@@ -151,6 +158,7 @@ const { createApp } = Vue
                 ],
             },
             {
+                hover: false,
                 name: 'Davide',
                 avatar: '_8',
                 visible: true,
@@ -176,11 +184,17 @@ const { createApp } = Vue
         ],
         dipende : "",
         element : "",
-        subElement : ""
+        subElement : "",
+        check: ''
       }
     },
     methods: {
        changePicture(element){
+        if (this.check !== ''){
+            this.check.hover = false
+        }
+            this.check = element;
+            element.hover = true;
             this.dipende = element.imagine;
             this.element = element;
             this.subElement = element.messages;
@@ -188,8 +202,11 @@ const { createApp } = Vue
 
        addi(){
             xd = this.$refs.madonna.value;
+            hoy = new Date()
+            hour = hoy.toString()
+            perfect = hour.slice(5)
             messag = {
-                date: '',
+                date: perfect,
                 message: xd,
                 status: 'sent'
             }
@@ -199,8 +216,11 @@ const { createApp } = Vue
        },
 
        riposta (){
+            hoy = new Date()
+            hour = hoy.toString()
+            perfect = hour.slice(5)
             messag = {
-                date: '',
+                date: perfect,
                 message: 'ciao',
                 status: 'received'
             }

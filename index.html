@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="chats">
-                        <div class="users" v-for=" user in contacts" @click="changePicture(user)">
+                        <div class="users change" v-for=" user in contacts" @click="changePicture(user)" :class="user.hover == true ? 'hover' : 'bianco'">
                             <div class="name" >
                                 <div class="picture">
                                     <img :src="user.imagine" alt="">
@@ -84,6 +84,7 @@
                                         {{messagge.message}}
                                     </p>
                                     <div class="dates">
+                                        <button></button>
                                         {{messagge.date.slice(11, 16)}}
                                     </div>
                                 </div>

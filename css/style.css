@@ -86,10 +86,22 @@ img{
     display: flex;
     align-items: center;
     height: 55px;
-    background-color: #e1c1c1;
+    background-color: #fff;
     border: .5px solid black;
     border-top: none;
 }
+.hover{
+    background-color: gray;
+}
+
+.bianco{
+    background-color: #fff;
+}
+
+.change:hover{
+    background-color: gray;
+}
+
 .lachat{
     display: flex;
     align-items: center;
@@ -132,6 +144,7 @@ i{
     padding: 9px;
     display: flex;
     justify-content: space-between;
+    word-break: break-all;
 }
 
 .green{
@@ -146,6 +159,8 @@ i{
 }
 
 .dates{
+    min-width: 35px;
     margin-top: auto;
     font-size: .7rem;
 }
+
